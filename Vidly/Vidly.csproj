@@ -174,16 +174,43 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811241940122_InitialModel.cs" />
+    <Compile Include="Migrations\201811241940122_InitialModel.Designer.cs">
+      <DependentUpon>201811241940122_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811241949551_AddIsScubscribedToCustomer.cs" />
+    <Compile Include="Migrations\201811241949551_AddIsScubscribedToCustomer.Designer.cs">
+      <DependentUpon>201811241949551_AddIsScubscribedToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811241957418_AddMembershipType.cs" />
+    <Compile Include="Migrations\201811241957418_AddMembershipType.Designer.cs">
+      <DependentUpon>201811241957418_AddMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811242001534_PoulateMembershipType.cs" />
+    <Compile Include="Migrations\201811242001534_PoulateMembershipType.Designer.cs">
+      <DependentUpon>201811242001534_PoulateMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811242012486_AddDataAnnotationToNameColumnInCustomer.cs" />
+    <Compile Include="Migrations\201811242012486_AddDataAnnotationToNameColumnInCustomer.Designer.cs">
+      <DependentUpon>201811242012486_AddDataAnnotationToNameColumnInCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Custmore.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MembershipType.cs" />
+    <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\RandomMovieViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-lumen.css" />
@@ -242,9 +269,15 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Movie\Random.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Customer\Details.cshtml" />
+    <Content Include="Views\Movie\Index.cshtml" />
+    <Content Include="Views\Shared\_NavBar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Movies\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -258,6 +291,23 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201811241940122_InitialModel.resx">
+      <DependentUpon>201811241940122_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811241949551_AddIsScubscribedToCustomer.resx">
+      <DependentUpon>201811241949551_AddIsScubscribedToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811241957418_AddMembershipType.resx">
+      <DependentUpon>201811241957418_AddMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811242001534_PoulateMembershipType.resx">
+      <DependentUpon>201811242001534_PoulateMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811242012486_AddDataAnnotationToNameColumnInCustomer.resx">
+      <DependentUpon>201811242012486_AddDataAnnotationToNameColumnInCustomer.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
