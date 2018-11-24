@@ -7,8 +7,11 @@
 <table class="table table-bordered table-hover">
     <thead>
         <tr>
+            <th> 
+                Movie
+            </th>
             <th>
-                Movies
+                Genre
             </th>
         </tr>
     </thead>
@@ -17,7 +20,10 @@
         {
             <tr>
                 <td>
-                    @movie.Name
+                    @Html.ActionLink(movie.Name, "Details", new { id = movie.Id },null)
+                </td>
+                <td>
+                    @movie.Genre.GenreType
                 </td>
             </tr>
         }
