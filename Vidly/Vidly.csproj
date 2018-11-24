@@ -201,6 +201,10 @@
     <Compile Include="Migrations\201811242012486_AddDataAnnotationToNameColumnInCustomer.Designer.cs">
       <DependentUpon>201811242012486_AddDataAnnotationToNameColumnInCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811242053074_AddNameColumnTomembershipType.cs" />
+    <Compile Include="Migrations\201811242053074_AddNameColumnTomembershipType.Designer.cs">
+      <DependentUpon>201811242053074_AddNameColumnTomembershipType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Custmore.cs" />
@@ -307,6 +311,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811242012486_AddDataAnnotationToNameColumnInCustomer.resx">
       <DependentUpon>201811242012486_AddDataAnnotationToNameColumnInCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811242053074_AddNameColumnTomembershipType.resx">
+      <DependentUpon>201811242053074_AddNameColumnTomembershipType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
