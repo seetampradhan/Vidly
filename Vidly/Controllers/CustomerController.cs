@@ -54,9 +54,27 @@ namespace Vidly.Controllers
             return View(newCustomer);
         }
 
-        public ActionResult Create()
+        [HttpPost]
+        public ActionResult Create(Custmore custmore)
         {
-            throw new NotImplementedException();
+            _context.Custmores.Add(custmore);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Customer");
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var customer = _context.Custmores.SingleOrDefault(c => c.Id == id);
+            if (customer == null)
+                return HttpNotFound();
+            var viewModel = new NewCustomerViewModel
+            {
+                Custmore = customer,
+                MembershipTypes = _context.MembershipTypes.ToList()
+            };
+
+            return View("New", viewModel);
         }
     }
 }

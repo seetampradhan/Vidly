@@ -6,7 +6,6 @@ namespace Vidly.ViewModels
 {
     public class NewCustomerViewModel
     {
-        [Display(Name = "Membership Type")]
         public IEnumerable<MembershipType> MembershipTypes { get; set; }
 
         public Custmore Custmore { get; set; }
