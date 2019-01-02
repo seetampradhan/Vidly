@@ -72,10 +72,17 @@ namespace Vidly.Controllers
 
         }
 
-
-        public ActionResult Save()
+        [HttpPost]
+        public ActionResult Save(Movie movie)
         {
-            throw new NotImplementedException();
+            if (movie.Id == 0)
+            {
+                movie.MovieAddedDate = DateTime.Now;
+                _context.Movies.Add(movie);
+                _context.SaveChanges();
+            }
+
+            return RedirectToAction("Index","Movie");
         }
     }
 }
