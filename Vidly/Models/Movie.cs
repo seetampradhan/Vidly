@@ -16,15 +16,16 @@ namespace Vidly.Models
 
         [Required]
         public Genre Genre { get; set; }
+
         public int GenreId { get; set; }
 
-        [DataType(DataType.Date)]
+        [DataType(DataType.Date),Display(Name = "Release Date")]
         public DateTime ReleaseDate { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime MovieAddedDate { get; set; }
 
-        [Required]
+        [Required,Display(Name = "Number in Stock")]
         public int MovieStock { get; set; }
     }
 }

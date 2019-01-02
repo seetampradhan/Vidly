@@ -56,9 +56,26 @@ namespace Vidly.Controllers
         [Route("movie/ReleaseDate/{year:regex(\\d{4})}/{month:regex(\\d{2}):range(1,12)}")]
         public ActionResult ByReleaseDate(int year, byte month)
         {
-            return Content(String.Format("Year: {0} / Month : {1}", year, month));
+            return Content($"Year: {year} / Month : {month}");
+        }
+        
+        public ActionResult New()
+        {
+            var genres = _context.Genres.ToList();
+
+            var movieFormModel = new MovieFormViewModel()
+            {
+                Genres = genres
+            };
+
+            return View(movieFormModel);
+
         }
 
-        
+
+        public ActionResult Save()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
