@@ -22,10 +22,10 @@ namespace Vidly.Models
         [Required,Display(Name = "Release Date")]
         public DateTime ReleaseDate { get; set; }
 
-        [DataType(DataType.Date)]
+        [DataType(DataType.Date),Required]
         public DateTime MovieAddedDate { get; set; }
 
-        [Required,Display(Name = "Number in Stock")]
+        [Required,Display(Name = "Number in Stock"),Range(1,20)]
         public int MovieStock { get; set; }
     }
 }
