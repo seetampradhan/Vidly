@@ -11,30 +11,30 @@
 {
     @Html.ValidationSummary(true, "Please fix below errors.")
     <div class="form-group">
-        @Html.LabelFor(m => m.Custmore.Name)
-        @Html.TextBoxFor(m => m.Custmore.Name, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Custmore.Name)
+        @Html.LabelFor(m => m.Customer.Name)
+        @Html.TextBoxFor(m => m.Customer.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.Name)
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(m => m.Custmore.MembershipTypeId)
-        @Html.DropDownListFor(m => m.Custmore.MembershipTypeId, new SelectList(Model.MembershipTypes,"Id","Name"),
+        @Html.LabelFor(m => m.Customer.MembershipTypeId)
+        @Html.DropDownListFor(m => m.Customer.MembershipTypeId, new SelectList(Model.MembershipTypes,"Id","Name"),
             "Select Membership Type",new { @class="form-control" })
-        @Html.ValidationMessageFor(m => m.Custmore.MembershipTypeId)
+        @Html.ValidationMessageFor(m => m.Customer.MembershipTypeId)
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(m => m.Custmore.Birthdate)
-        @Html.TextBoxFor(m => m.Custmore.Birthdate, "{0:d MMM yyyy}", new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Custmore.Birthdate)
+        @Html.LabelFor(m => m.Customer.Birthdate)
+        @Html.TextBoxFor(m => m.Customer.Birthdate, "{0:d MMM yyyy}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.Birthdate)
     </div>
 
     <div class="checkbox">
         <label>
-            @Html.CheckBoxFor(m => m.Custmore.IsSubscribedToNewsLetter)Subscribed To Newsletter ?
+            @Html.CheckBoxFor(m => m.Customer.IsSubscribedToNewsLetter)Subscribed To Newsletter ?
         </label>
     </div>
-    @Html.HiddenFor(c => c.Custmore.Id)
+    @Html.HiddenFor(c => c.Customer.Id)
     @Html.AntiForgeryToken()
     <div class="form-group">
         <button type="submit" class="btn btn-primary">Save</button>

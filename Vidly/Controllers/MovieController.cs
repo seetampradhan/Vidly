@@ -25,10 +25,10 @@ namespace Vidly.Controllers
         public ActionResult Random()
         {
             var movie = new Movie() { Name = "Sherk!" };
-            var customer = new List<Custmore>
+            var customer = new List<Customer>
             {
-                new Custmore { Id =1, Name="Seetam" },
-                new Custmore { Id = 2, Name="Agni" }
+                new Customer { Id =1, Name="Seetam" },
+                new Customer { Id = 2, Name="Agni" }
             };
 
             var randomMovie = new RandomMovieViewModel()

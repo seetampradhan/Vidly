@@ -47,7 +47,7 @@ namespace Vidly.Controllers
 
             var newCustomer = new CustomerFormViewModel
             {
-                Custmore = new Custmore(),
+                Customer = new Customer(),
                 MembershipTypes = membershipType
             };
 
@@ -57,28 +57,28 @@ namespace Vidly.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Save(Custmore custmore)
+        public ActionResult Save(Customer customer)
         {
             if (!ModelState.IsValid)
             {
                 var customerFormModel = new CustomerFormViewModel
                 {
-                    Custmore = custmore,
+                    Customer = customer,
                     MembershipTypes = _context.MembershipTypes.ToList()
                 };
 
                 return View("CustomerForm", customerFormModel);
             }
 
-            if (custmore.Id == 0)
-                _context.Custmores.Add(custmore);
+            if (customer.Id == 0)
+                _context.Custmores.Add(customer);
             else
             {
-                var customerInDb = _context.Custmores.Single(c => c.Id == custmore.Id);
-                customerInDb.Name = custmore.Name;
-                customerInDb.Birthdate = custmore.Birthdate;
-                customerInDb.IsSubscribedToNewsLetter = custmore.IsSubscribedToNewsLetter;
-                customerInDb.MembershipTypeId = custmore.MembershipTypeId;
+                var customerInDb = _context.Custmores.Single(c => c.Id == customer.Id);
+                customerInDb.Name = customer.Name;
+                customerInDb.Birthdate = customer.Birthdate;
+                customerInDb.IsSubscribedToNewsLetter = customer.IsSubscribedToNewsLetter;
+                customerInDb.MembershipTypeId = customer.MembershipTypeId;
             }
             
             
@@ -96,7 +96,7 @@ namespace Vidly.Controllers
 
             var viewModel = new CustomerFormViewModel
             {
-                Custmore = customer,
+                Customer = customer,
                 MembershipTypes = _context.MembershipTypes.ToList()
             };
 

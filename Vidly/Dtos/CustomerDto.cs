@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using Vidly.Models;
-using System.ComponentModel.DataAnnotations;
 
-namespace Vidly.Models
+namespace Vidly.Dtos
 {
-    public class Custmore
+    public class CustomerDto
     {
         public int Id { get; set; }
 
@@ -16,13 +16,9 @@ namespace Vidly.Models
 
         public bool IsSubscribedToNewsLetter { get; set; }
 
-        public MembershipType MembershipType { get; set; }
-
-        [Display(Name = "Membership Type")]
         public int MembershipTypeId { get; set; }
 
-        [Display(Name = "Date of Birth")]
-        [Min18YearsIfAMember]
+        //[Min18YearsIfAMember]
         public DateTime? Birthdate { get; set; }
     }
 }
