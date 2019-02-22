@@ -45,23 +45,21 @@
                 ]
             });
 
-            $("#tblCustomer ").on("click",
-                ".js-delete",
-                function () {
-                    var button = $(this);
-                    bootbox.confirm("Are you sure you want to delete the customer?",
-                        function (result) {
-                            if (result) {
-                                $.ajax({
-                                    url: "/api/customers/" + button.attr("data-customer-id"),
-                                    method: "DELETE",
-                                    success: function () {
-                                        table.row(button.parents("tr")).remove().draw();
-                                    }
-                                });
-                            }
-                        });
-                });
+            $("#tblCustomer ").on("click", ".js-delete", function () {
+                var button = $(this);
+                bootbox.confirm("Are you sure you want to delete the customer?",
+                    function (result) {
+                        if (result) {
+                            $.ajax({
+                                url: "/api/customers/" + button.attr("data-customer-id"),
+                                method: "DELETE",
+                                success: function () {
+                                    table.row(button.parents("tr")).remove().draw();
+                                }
+                            });
+                        }
+                    });
+            });
         });
     </script>
 
